@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+
+  --color-bg: #faf8f5;
+  --color-surface: #ffffff;
+  --color-ink: #1c1917;
+  --color-muted: #78716c;
+  --color-line: #e7e5e4;
+  --color-accent: #b45309;
+  --color-accent-soft: #fdf3e7;
+  --color-badge: #f5e5d0;
+  --color-success: #15803d;
+  --color-disabled: #e7e5e4;
+  --color-dark: #191512;
+  --color-dark-text: #f3eae0;
+
+  --color-error: #b91c1c;
+  --color-accent-hover: #9a4708;
+  --color-accent-active: #7f3a06;
+  --color-ink-hover: #2e2823;
+  --color-ink-active: #0f0c0a;
+  --color-surface-hover: #f5ede4;
+
+  --space-xs: 5px;
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 30px;
+  --space-2xl: 40px;
+  --space-3xl: 60px;
+  --space-4xl: 80px;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-display: 72px;
+  --lh-display: 1.2;
+  --fs-h1: 48px;
+  --lh-h1: 1.2;
+  --fs-h2: 24px;
+  --lh-h2: 1.3;
+  --fs-h3: 20px;
+  --lh-h3: 1.3;
+  --fs-card-title: 16px;
+  --lh-card-title: 1.4;
+  --fs-body: 16px;
+  --lh-body: 1.5;
+  --fs-small: 14px;
+  --lh-small: 1.4;
+  --fs-caption: 12px;
+  --lh-caption: 1.3;
+  --fs-price: 19px;
+  --lh-price: 1.2;
+  --fs-button: 14px;
+  --lh-button: 1.2;
+  --ls-button: 1.2px;
+
+  --container-max: 1280px;
+  --container-padding: 20px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --container-padding: 10px;
+  }
+}
