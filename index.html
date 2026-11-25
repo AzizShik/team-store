@@ -11,6 +11,7 @@
 
   <body data-page="home">
     {{> header active="about" }}
+
     <main class="main">
       <section class="hero">
         <div class="container">
@@ -33,7 +34,21 @@
           <a class="hero__cta" href="./catalog.html">Смотреть каталог</a>
         </div>
       </section>
+
+      <section class="catalog-preview">
+        <div class="container">
+          <div class="catalog-preview__head">
+            <h2 class="catalog-preview__title">Из каталога</h2>
+            <a class="catalog-preview__link" href="./catalog.html">Весь каталог →</a>
+          </div>
+
+          <div class="catalog-preview__grid"></div>
+
+          <p class="catalog-preview__note">12 книг в наличии</p>
+        </div>
+      </section>
     </main>
+
     {{> footer }}
 
     <script type="module" src="/src/pages/home.ts"></script>
