@@ -1,3 +1,1 @@
-import { mount } from '../shared/layout';
-
-mount('Переплёт');
+import '../shared/layout';

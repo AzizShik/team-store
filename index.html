@@ -11,7 +11,29 @@
 
   <body data-page="home">
     {{> header active="about" }}
-    <main id="app" class="main"></main>
+    <main class="main">
+      <section class="hero">
+        <div class="container">
+          <p class="hero__eyebrow">О проекте</p>
+          <h1 class="hero__title">
+            Книга, которую<br />
+            хочется забрать
+          </h1>
+          <p class="hero__lead">
+            Переплёт — учебный интернет-магазин книг команды RS School. Каталог с поиском и
+            фильтрами, корзина с количеством и промокодом. Написан на TypeScript и Vite без
+            фреймворков, логика покрыта unit-тестами на Vitest.
+          </p>
+          <ul class="hero__list">
+            <li>Каталог с поиском, фильтром по категории и сортировкой</li>
+            <li>Отдельная карточка книги с обложкой и ценой</li>
+            <li>Корзина с количеством, удалением и промокодом SALE10</li>
+            <li>Логика покрыта unit-тестами на Vitest</li>
+          </ul>
+          <a class="hero__cta" href="./catalog.html">Смотреть каталог</a>
+        </div>
+      </section>
+    </main>
     {{> footer }}
 
     <script type="module" src="/src/pages/home.ts"></script>
