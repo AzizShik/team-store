@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="./index.html" aria-label="Переплёт — на главную">
+      <img
+        class="logo__mark"
+        src="/src/assets/icons/logo.svg"
+        alt=""
+        width="28"
+        height="28"
+      />
+      <span class="logo__text">Переплёт</span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a
+        class="nav__link{{#if (eq active "about")}} nav__link--active{{/if}}"
+        href="./index.html"
+        {{#if (eq active "about")}}aria-current="page"{{/if}}
+      >
+        <span class="nav__icon nav__icon--about" aria-hidden="true"></span>
+        <span>О нас</span>
+      </a>
+
+      <a
+        class="nav__link{{#if (eq active "catalog")}} nav__link--active{{/if}}"
+        href="./catalog.html"
+        {{#if (eq active "catalog")}}aria-current="page"{{/if}}
+      >
+        <span class="nav__icon nav__icon--catalog" aria-hidden="true"></span>
+        <span>Каталог</span>
+      </a>
+
+      <a
+        class="nav__link nav__link--cart{{#if (eq active "cart")}} nav__link--active{{/if}}"
+        href="./cart.html"
+        {{#if (eq active "cart")}}aria-current="page"{{/if}}
+      >
+        <span class="nav__cart">
+          <span class="nav__icon nav__icon--cart" aria-hidden="true"></span>
+          <span class="nav__count" data-cart-count hidden>0</span>
+        </span>
+        <span>Корзина</span>
+      </a>
+    </nav>
+  </div>
+</header>

@@ -10,7 +10,10 @@
   </head>
 
   <body data-page="catalog">
-    <div id="app"></div>
+    {{> header active="catalog" }}
+    <main id="app"></main>
+    {{> footer }}
+
     <script type="module" src="/src/pages/catalog.ts"></script>
   </body>
 </html>

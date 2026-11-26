@@ -1,10 +1,18 @@
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-sans);
   color: var(--color-ink);
   background-color: var(--color-bg);
   font-weight: 400;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .container {
