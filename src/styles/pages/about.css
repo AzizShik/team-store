@@ -170,8 +170,6 @@
   --preview-author-size: 12px;
   --preview-author-gap: 6px;
   --preview-price-size: 18px;
-  --preview-cta-height: 34px;
-  --preview-cta-width: 120px;
   --preview-cta-gap: 14px;
   --preview-note-top: 14px;
   --preview-note-indent: 0;
@@ -274,34 +272,12 @@
   line-height: 1.2;
 }
 
+/* Внешний вид кнопки/степпера — в components/cart-control.css, здесь только размещение */
 .preview-card__cta {
   position: relative;
   z-index: 1;
-  display: inline-flex;
   align-self: flex-start;
-  align-items: center;
-  justify-content: center;
-  width: var(--preview-cta-width);
-  min-height: var(--preview-cta-height);
   margin-top: var(--preview-cta-gap);
-  padding: 0;
-  border: 0;
-  border-radius: var(--radius-full);
-  background-color: var(--color-accent);
-  color: var(--color-surface);
-  font-size: var(--fs-button);
-  font-weight: 600;
-  line-height: 1.2;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.preview-card__cta:hover {
-  background-color: var(--color-accent-hover);
-}
-
-.preview-card__cta:active {
-  background-color: var(--color-accent-active);
 }
 
 .catalog-preview__note {

@@ -1,4 +1,7 @@
 import '../styles/index.css';
+import { initCartCount } from '../cart/cart-count';
+
+initCartCount();
 
 export function mount(title: string): HTMLElement {
   const app = document.querySelector<HTMLDivElement>('#app');

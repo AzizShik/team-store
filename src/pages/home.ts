@@ -1,4 +1,5 @@
 import '../shared/layout';
+import { createCartControl } from '../cart/cart-control';
 import { BOOKS, coverUrl } from '../data/books';
 import { formatPrice } from '../shared/format';
 import { createElement } from '../utils/DOM';
@@ -36,14 +37,7 @@ if (grid) {
       className: 'preview-card__price',
       text: formatPrice(book.price),
     });
-    const cta = createElement('button', {
-      className: 'preview-card__cta',
-      text: 'В корзину',
-      attrs: {
-        type: 'button',
-        'aria-label': `Добавить «${book.title}» в корзину`,
-      },
-    });
+    const cta = createCartControl(book.id, { className: 'preview-card__cta' });
 
     const body = createElement('div', { className: 'preview-card__body' }, [
       heading,
