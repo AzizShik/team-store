@@ -1,0 +1,110 @@
+/* Кнопка «В корзину» ↔ степпер (src/cart/cart-control.ts) */
+
+.cart-control {
+  --cart-control-button-width: 120px;
+  --cart-control-button-height: 34px;
+  --cart-control-stepper-width: 96px;
+  --cart-control-stepper-height: 32px;
+  --cart-control-step-width: 26px;
+  --cart-control-step-size: 19px;
+  --cart-control-qty-size: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  /* Держим высоту кнопки, чтобы карточка не прыгала при смене кнопки и степпера */
+  min-height: var(--cart-control-button-height);
+}
+
+.cart-control--large {
+  --cart-control-button-width: 300px;
+  --cart-control-button-height: 52px;
+  --cart-control-stepper-width: 300px;
+  --cart-control-stepper-height: 52px;
+  --cart-control-step-width: 48px;
+  --cart-control-step-size: 24px;
+  --cart-control-qty-size: 18px;
+}
+
+.cart-control [hidden] {
+  display: none;
+}
+
+/* Кнопка — стиль Accent */
+.cart-control__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--cart-control-button-width);
+  max-width: 100%;
+  height: var(--cart-control-button-height);
+  padding: 0 var(--space-sm);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  font-size: var(--fs-button);
+  font-weight: 600;
+  line-height: var(--lh-button);
+  letter-spacing: var(--ls-button);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cart-control__button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.cart-control__button:active {
+  background-color: var(--color-accent-active);
+}
+
+.cart-control__button:disabled {
+  background-color: var(--color-disabled);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* Степпер */
+.cart-control__stepper {
+  display: flex;
+  align-items: center;
+  width: var(--cart-control-stepper-width);
+  max-width: 100%;
+  height: var(--cart-control-stepper-height);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+/* «−» и «+»: знак по центру, область нажатия на всю высоту степпера */
+.cart-control__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--cart-control-step-width);
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--color-muted);
+  font-size: var(--cart-control-step-size);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cart-control__step:hover {
+  color: var(--color-ink);
+}
+
+.cart-control__qty {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-ink);
+  font-size: var(--cart-control-qty-size);
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0;
+  text-align: center;
+}

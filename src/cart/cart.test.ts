@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import type { Book } from '../data/books';
-import { addItem, calcCart, changeQty, getItemsCount, removeItem, type CartItem } from './cart';
+import {
+  addItem,
+  calcCart,
+  changeQty,
+  getItemQty,
+  getItemsCount,
+  removeItem,
+  type CartItem,
+} from './cart';
 
 const book = (id: string, price: number): Book => ({
   id,
@@ -55,6 +63,21 @@ describe('getItemsCount', () => {
       { id: 'c', qty: 1 },
     ];
     expect(getItemsCount(items)).toBe(4);
+  });
+});
+
+describe('getItemQty', () => {
+  const items: CartItem[] = [
+    { id: 'a', qty: 1 },
+    { id: 'b', qty: 3 },
+  ];
+
+  it('возвращает количество книги в корзине', () => {
+    expect(getItemQty(items, 'b')).toBe(3);
+  });
+
+  it('возвращает 0, если книги нет в корзине', () => {
+    expect(getItemQty(items, 'c')).toBe(0);
   });
 });
 

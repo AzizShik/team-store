@@ -44,6 +44,10 @@ export function removeItem(items: readonly CartItem[], id: string): CartItem[] {
   return items.filter((item) => item.id !== id);
 }
 
+export function getItemQty(items: readonly CartItem[], id: string): number {
+  return items.find((item) => item.id === id)?.qty ?? 0;
+}
+
 export function getItemsCount(items: readonly CartItem[]): number {
   return items.reduce((sum, item) => sum + item.qty, 0);
 }
