@@ -98,6 +98,13 @@
   color: var(--color-ink);
 }
 
+/* «−» на минимуме (страница корзины): фокус остаётся, нажатие ничего не делает */
+.cart-control__step[aria-disabled='true'] {
+  color: var(--color-muted);
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .cart-control__qty {
   flex: 1;
   min-width: 0;
