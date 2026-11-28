@@ -11,7 +11,86 @@
 
   <body data-page="catalog">
     {{> header active="catalog" }}
-    <main id="app"></main>
+
+    <main class="catalog-page">
+      <div class="container">
+        <header class="catalog-head">
+          <h1 class="catalog-head__title">Каталог</h1>
+          <p class="catalog-head__meta" data-catalog-meta>12 книг · 3 категории</p>
+        </header>
+
+        <form class="catalog-filters" aria-label="Фильтры каталога" data-catalog-filters>
+          <input
+            class="catalog-filters__search"
+            type="search"
+            name="search"
+            placeholder="Поиск по названию"
+            aria-label="Поиск по названию"
+            data-catalog-search
+          />
+
+          <label class="catalog-filters__select catalog-filters__category">
+            <select name="category" aria-label="Категория" data-catalog-category>
+              <option value="">Все категории</option>
+              <option value="fiction">Художественная литература</option>
+              <option value="nonfiction">Нон-фикшн</option>
+              <option value="poetry">Поэзия</option>
+            </select>
+          </label>
+
+          <input
+            class="catalog-filters__price catalog-filters__price-from"
+            type="number"
+            name="minPrice"
+            placeholder="От, ₽"
+            aria-label="Минимальная цена"
+            min="0"
+            data-catalog-price-from
+          />
+
+          <input
+            class="catalog-filters__price catalog-filters__price-to"
+            type="number"
+            name="maxPrice"
+            placeholder="До, ₽"
+            aria-label="Максимальная цена"
+            min="0"
+            data-catalog-price-to
+          />
+
+          <label class="catalog-filters__select catalog-filters__sort">
+            <select name="sort" aria-label="Сортировка" data-catalog-sort>
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Сначала дешёвые</option>
+              <option value="price-desc">Сначала дорогие</option>
+            </select>
+          </label>
+
+          <button class="catalog-filters__reset" type="reset" data-catalog-reset>
+            Сбросить фильтры
+          </button>
+        </form>
+
+        <div class="catalog-grid" data-catalog-grid></div>
+
+        <div class="catalog-empty" data-catalog-empty hidden>
+          <div class="catalog-empty__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="2" />
+              <path d="m21 21 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h2 class="catalog-empty__title">Ничего не найдено</h2>
+          <p class="catalog-empty__text">
+            По вашему запросу книг нет. Попробуйте изменить условия или сбросить фильтры.
+          </p>
+          <button class="catalog-empty__action" type="button" data-catalog-empty-reset>
+            Сбросить фильтры
+          </button>
+        </div>
+      </div>
+    </main>
+
     {{> footer }}
 
     <script type="module" src="/src/pages/catalog.ts"></script>
