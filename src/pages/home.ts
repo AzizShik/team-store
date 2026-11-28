@@ -1,5 +1,6 @@
 import '../shared/layout';
 import { createCartControl } from '../cart/cart-control';
+import '../styles/pages/about.css';
 import { BOOKS, coverUrl } from '../data/books';
 import { formatPrice } from '../shared/format';
 import { createElement } from '../utils/DOM';
