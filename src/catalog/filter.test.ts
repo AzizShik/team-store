@@ -1,7 +1,6 @@
-import { describe, it } from 'node:test';
+import { describe, expect, it } from 'vitest';
 import { Book } from '../data/books';
 import { filterBooks, Filters } from './filter';
-import { expect } from 'vitest';
 
 const makeBook = (overrides: Partial<Book> = {}): Book => ({
   id: '1',
