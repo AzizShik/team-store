@@ -43,6 +43,14 @@ describe('changeQty', () => {
     expect(changeQty(items, 'a', 1)).toEqual([{ id: 'a', qty: 3 }]);
     expect(changeQty(items, 'a', -1)).toEqual([{ id: 'a', qty: 1 }]);
   });
+
+  it('удаляет книгу, если количество стало 0', () => {
+    const items: CartItem[] = [
+      { id: 'a', qty: 1 },
+      { id: 'b', qty: 2 },
+    ];
+    expect(changeQty(items, 'a', -1)).toEqual([{ id: 'b', qty: 2 }]);
+  });
 });
 
 describe('removeItem', () => {
@@ -120,5 +128,29 @@ describe('calcCart', () => {
     expect(result.promo).toBeNull();
     expect(result.discount).toBe(0);
     expect(result.total).toBe(3860);
+  });
+
+  it('пропускает книги с неизвестным id', () => {
+    const result = calcCart(
+      [
+        { id: 'a', qty: 1 },
+        { id: 'unknown', qty: 2 },
+        { id: 'c', qty: 1 },
+      ],
+      BOOKS,
+      null,
+    );
+
+    expect(result.lines.map((line) => line.book.id)).toEqual(['a', 'c']);
+    expect(result.count).toBe(2);
+    expect(result.subtotal).toBe(1880);
+    expect(result.total).toBe(1880);
+  });
+
+  it('округляет скидку до целых рублей', () => {
+    const result = calcCart([{ id: 'x', qty: 1 }], [book('x', 995)], 'SALE10');
+
+    expect(result.discount).toBe(100); // 99.5 → 100
+    expect(result.total).toBe(895);
   });
 });

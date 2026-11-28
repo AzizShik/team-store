@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Book } from '../data/books';
+import { calcCart } from './cart';
 import { CART_STORAGE_KEY } from './storage';
 import { createCartStore } from './store';
 
@@ -119,6 +120,18 @@ describe('applyPromo', () => {
 
     expect(store.applyPromo('WRONG')).toBe('unknown');
     expect(store.getCart().promo).toBe('SALE10');
+  });
+
+  it('повторное применение SALE10 не увеличивает скидку', () => {
+    const store = createCartStore(BOOKS);
+    store.addToCart('a'); // 1190 ₽
+
+    expect(store.applyPromo('SALE10')).toBe('applied');
+    expect(store.applyPromo('SALE10')).toBe('applied');
+
+    const { items, promo } = store.getCart();
+    expect(promo).toBe('SALE10');
+    expect(calcCart(items, BOOKS, promo).discount).toBe(119); // 10%, а не 20%
   });
 
   it('при пустой корзине возвращает empty и не применяется', () => {
